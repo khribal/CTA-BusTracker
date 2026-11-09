@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05668D">
+  <title>CTA Bus Tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <img src="img/bus.png" alt="" class="logo">
+    <h1>CTA Bus Tracker</h1>
+  </header>
+
+  <main class="layout">
+    <section class="card controls">
+      <label for="routes" class="field-label">Route</label>
+      <div class="route-row">
+        <select id="routes" name="routes"></select>
+        <button id="go" type="button">Show route</button>
+      </div>
+      <div id="dirs" class="dir-toggle" role="radiogroup" aria-label="Direction"></div>
+    </section>
+
+    <section class="map-wrap">
+      <div id="map"></div>
+    </section>
+
+    <section class="card">
+      <h2>Buses <span id="bus-count" class="badge"></span></h2>
+      <ul id="buses" class="bus-list">
+        <li class="empty">Pick a route to see live buses.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Stops</h2>
+      <ol id="stops" class="stop-list"></ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Data from CTA Bus Tracker · Bus icon by <a href="https://www.flaticon.com/authors/hilmy-abiyyu-a" target="_blank" rel="noopener">Hilmy Abiyyu A.</a> on Flaticon
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="routes.js"></script>
+  <script type="module" src="buses.js"></script>
+</body>
+</html>
